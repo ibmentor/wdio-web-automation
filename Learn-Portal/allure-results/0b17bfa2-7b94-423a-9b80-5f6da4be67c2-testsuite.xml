@@ -1,0 +1,136 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1669874719554' stop='1669874857910'>
+    <name>Learn Portal - Sign up page test</name>
+    <title>Learn Portal - Sign up page test</title>
+    <test-cases>
+        <test-case start='1669874719554' status='passed' stop='1669874816157'>
+            <name>315997 TC_01 - Sign up page submitting the form blank validations</name>
+            <title>315997 TC_01 - Sign up page submitting the form blank validations</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-107.0.5304.122'/>
+            </parameters>
+            <steps>
+                <step start='1669874719556' status='passed' stop='1669874804402'>
+                    <name>Open Learn Portal Signup page</name>
+                    <title>Open Learn Portal Signup page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874804402' status='passed' stop='1669874807127'>
+                    <name>Click on Next button</name>
+                    <title>Click on Next button</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874807127' status='passed' stop='1669874807166'>
+                    <name>Wait for Validation message to appear</name>
+                    <title>Wait for Validation message to appear</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874807166' status='passed' stop='1669874807246'>
+                    <name>Validate Blank Name text field</name>
+                    <title>Validate Blank Name text field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874807246' status='passed' stop='1669874807313'>
+                    <name>Validate Blank Email text field</name>
+                    <title>Validate Blank Email text field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874807313' status='passed' stop='1669874807343'>
+                    <name>Validate Blank City dropdown</name>
+                    <title>Validate Blank City dropdown</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874807343' status='undefined'>
+                    <name>Validate Blank Grade dropdown</name>
+                    <title>Validate Blank Grade dropdown</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1669874816159' status='broken' stop='1669874857904'>
+            <name>316000 TC_04 - Login to Learn Portal with valid phone number - invalid otp</name>
+            <title>316000 TC_04 - Login to Learn Portal with valid phone number - invalid otp</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-107.0.5304.122'/>
+            </parameters>
+            <steps>
+                <step start='1669874816161' status='passed' stop='1669874817180'>
+                    <name>Open Learn Portal</name>
+                    <title>Open Learn Portal</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874817180' status='passed' stop='1669874818412'>
+                    <name>Click Sign Up button</name>
+                    <title>Click Sign Up button</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874818412' status='passed' stop='1669874818840'>
+                    <name>Enter valid phone number to phone number field</name>
+                    <title>Enter valid phone number to phone number field</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874818840' status='passed' stop='1669874818946'>
+                    <name>Click on next</name>
+                    <title>Click on next</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874818946' status='passed' stop='1669874824506'>
+                    <name>Enter invalid OTP</name>
+                    <title>Enter invalid OTP</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874824506' status='passed' stop='1669874824631'>
+                    <name>Click on next</name>
+                    <title>Click on next</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669874824631' status='broken' stop='1669874857903'>
+                    <name>Invalid OTP message should get displayed</name>
+                    <title>Invalid OTP message should get displayed</title>
+                    <attachments>
+                        <attachment title='Screenshot' source='46753c5f-842b-408e-9bca-950dc34b1a15-attachment.png' type='image/png' size='586497'/>
+                        <attachment title='Screenshot' source='4ff2c85b-c898-4577-ad61-326c1fc626ba-attachment.png' type='image/png' size='586497'/>
+                    </attachments>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>element ("//*[text()='Invalid OTP, please check the OTP and try again']") still not displayed after 30000ms</message>
+                <stack-trace>Error: element ("//*[text()='Invalid OTP, please check the OTP and try again']") still not displayed after 30000ms
+                    at D:\LP_11_14\qa-automation\Learn-Portal\node_modules\webdriverio\build\commands\browser\waitUntil.js:66:23
+                    at Element.wrapCommandFn (D:\LP_11_14\qa-automation\Learn-Portal\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Element.elementErrorHandlerCallbackFn (D:\LP_11_14\qa-automation\Learn-Portal\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at Element.wrapCommandFn (D:\LP_11_14\qa-automation\Learn-Portal\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Element.wrapCommandFn (D:\LP_11_14\qa-automation\Learn-Portal\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Element.elementErrorHandlerCallbackFn (D:\LP_11_14\qa-automation\Learn-Portal\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at Element.wrapCommandFn (D:\LP_11_14\qa-automation\Learn-Portal\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at Context.&lt;anonymous> (D:\LP_11_14\qa-automation\Learn-Portal\test\Smoke_Suite\/SignUp_SmokeTest.js:39:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

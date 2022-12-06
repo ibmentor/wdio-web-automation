@@ -1,0 +1,131 @@
+import { AllureUtil as allure } from "../../utils/util.allure"
+import ProfilePage from "../../Pages/ProfilePage"
+import LoginPage from "../../Pages/LoginPage"
+import cloudWatchLoginPage from "../../Pages/CloudWatchPage"
+import { loginData } from "../../Data/LoginData"
+import { getUserId } from "../../utils/function"
+import { dashboardData } from "../../Data/DashboardData"
+import CalendarPage from "../../Pages/CalendarPage"
+let CalendarOLAPdata = require('../../Data/OLAP_data/Calendar_OLAP_Data.json')
+let userID
+
+describe("OLAP - Calendar Module ", async () => { 
+
+it("352273 TC_01 Validate the U_event_id 9202115, m_desc today's plan view card on homepage", async () => { 
+   allure.startStep("Change the cohort", true)
+   await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][5], 'calendarUser')
+   userID = await getUserId()
+   await CalendarPage.calendarTitle.click()
+   allure.startStep("today's plan view card on homepage event triggered - 9202115", true)
+   expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202115", userID, CalendarOLAPdata)).toEqual(true)
+   allure.endStep()
+ })
+it("352278 TC_02 Validate the U_event_id 9202120 , m_desc go to calendar click from homepage", async () => {
+   allure.startStep("Change the cohort", true)
+   await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][5], 'calendarUser')
+   userID = await getUserId()
+   await CalendarPage.calendarTitle.click()
+    allure.startStep("go to calendar click from homepage - 9202120", true)
+    expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202120", userID, CalendarOLAPdata)).toEqual(true)
+    allure.endStep() 
+ })
+it("352279 TC_03 Validate the U_event_id 9202121 , m_desc calendar view", async () => {
+   allure.startStep("Change the cohort", true)
+   await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][5], 'calendarUser')
+   userID = await getUserId()
+   await CalendarPage.calendarTitle.click()
+    allure.startStep("calendar view - 9202121", true)
+    expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202121", userID, CalendarOLAPdata)).toEqual(true)
+    allure.endStep() 
+ })
+ it("352280 TC_06 Validate the U_event_id 9202122 , m_desc click on date to expand calendar", async () => {
+   allure.startStep("Change the cohort", true)
+   await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][5], 'calendarUser')
+   userID = await getUserId()
+   await CalendarPage.calendarTitle.click()
+   await CalendarPage.calendarExpand.click()
+   allure.startStep("click on date to expand calendar - 9202122", true)
+   expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202122", userID, CalendarOLAPdata)).toEqual(true)
+   allure.endStep() 
+})
+it("352281 TC_07 Validate the U_event_id 9202123, m_desc view calendar popup", async () => {
+   allure.startStep("Change the cohort", true)
+   await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][5], 'calendarUser')
+   userID = await getUserId()
+   await CalendarPage.calendarTitle.click()
+   await CalendarPage.calendarExpand.click()
+   allure.startStep("view calendar popup - 9202123", true)
+   expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202123", userID, CalendarOLAPdata)).toEqual(true)
+   allure.endStep() 
+})
+it("352283 TC_08 Validate the U_event_id 9202126, m_desc click on weekly/daily/toduseray", async () => {
+   allure.startStep("Change the cohort", true)
+   await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][4], 'calendarUser')
+   userID = await getUserId()
+   await CalendarPage.calendarTitle.click()
+   await CalendarPage.btnWeekly.click()
+   allure.startStep("click on weekly/daily/toduseray - 9202126", true)
+   expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202126", userID, CalendarOLAPdata)).toEqual(true)
+   allure.endStep() 
+})
+it("352284 TC_04 Validate the U_event_id 9202127, m_desc view weekly/daily/today", async () => {
+   allure.startStep("Change the cohort", true)
+   await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][4], 'calendarUser')
+   userID = await getUserId()
+   await CalendarPage.calendarTitle.click()
+    allure.startStep("view weekly/daily/toduseray - 9202127", true)
+    expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202127", userID, CalendarOLAPdata)).toEqual(true)
+    allure.endStep() 
+ })
+
+it("352282 TC_09 Validate the U_event_id 9202125, m_desc click on date", async () => {
+    allure.startStep("Change the cohort", true)
+    await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][4], 'calendarUser')
+    userID = await getUserId()
+    await CalendarPage.calendarTitle.click()
+    await CalendarPage.btnDate.click()
+    allure.startStep("click on date - 9202125", true)
+    expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202125", userID, CalendarOLAPdata)).toEqual(true)
+    allure.endStep() 
+ }) 
+it("352277 TC_10 Validate the U_event_id 9202119, m_desc click on task group", async () => {
+    allure.startStep("Change the cohort", true)
+    await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][5], 'calendarUser')
+    userID = await getUserId()
+    await CalendarPage.calendarTitle.click()
+    await CalendarPage.btnAction.click()
+    allure.startStep("click on task group - 9202119", true)
+    expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202119", userID, CalendarOLAPdata)).toEqual(true)
+    allure.endStep() 
+ }) 
+ it("352275 TC_05 Validate the U_event_id 6000001 , m_desc Click join now", async () => {
+    allure.startStep("Change the cohort", true)
+    await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][5], 'calendarUser')
+    userID = await getUserId()
+    await CalendarPage.calendarTitle.click()
+    await CalendarPage.btnJoinnow.click()
+    allure.startStep("Click join now - 6000001", true)
+    expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("6000001", userID, CalendarOLAPdata)).toEqual(true)
+    allure.endStep() 
+ })
+ it("352274 TC_11 Validate the U_event_id 9202116, m_desc click on action on homepage card", async () => {
+    allure.startStep("Change the cohort", true)
+    await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][5], 'calendarUser')
+    userID = await getUserId()
+    await CalendarPage.calendarTitle.click()
+    await CalendarPage.btnResume.click()
+    allure.startStep("click on action on homepage card - 9202116", true)
+    expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202116", userID, CalendarOLAPdata)).toEqual(true)
+    allure.endStep() 
+ }) 
+ it("352276 TC_12 Validate the U_event_id 9202118, m_desc click on action", async () => {
+    allure.startStep("Change the cohort", true)
+    await ProfilePage.changeCohortDetail(dashboardData.dashboardElementValidation.cohortDetails[2][5], 'calendarUser')
+    userID = await getUserId()
+    await CalendarPage.calendarTitle.click()
+    await CalendarPage.btnResume.click()
+    allure.startStep("click on action - 9202118", true)
+    expect(await cloudWatchLoginPage.getAndCompareCloudwatchDataCalendar("9202118", userID, CalendarOLAPdata)).toEqual(true)
+    allure.endStep() 
+ }) 
+})

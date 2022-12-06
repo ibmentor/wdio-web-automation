@@ -1,0 +1,19 @@
+name: 'Trigger Jenkins Multiple Jobs'
+description: 'Triggering Jenkins Job through the API'
+author: 'somwya'
+inputs:
+  url:
+    description: 'jenkins base url'
+  user:
+    description: 'jenkins username'
+  token:
+    description: 'jenkins api token'
+  job:
+    description: 'jenkins job'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'check-circle'
+  color: 'green'

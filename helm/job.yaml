@@ -1,0 +1,44 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: qa-automation
+  labels:
+    app.kubernetes.io/name: qa-automation
+    app.kubernetes.io/instance: qa-automation
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: qa-automation
+        app.kubernetes.io/instance: qa-automation        
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: qa-automation
+          image: "823845340709.dkr.ecr.ap-south-1.amazonaws.com/qa-automation:{{ $.Values.imageID }}"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
+          resources:
+            limits:
+              cpu: '2'
+              memory: '8Gi'
+            requests:
+              cpu: '1'
+              memory: '4Gi'
+          env:
+          - name: SUITE
+            value: "{{ $.Values.suite }}"
+          - name: RUN_ENV
+            value: "{{ $.Values.runEnv }}"
+          - name: SLACK_NOTIFICATION
+            value: "{{ $.Values.slackNotification }}"
+          - name: ENV
+            value: "{{ $.Values.env }}"
+          - name: TESTRAIL
+            value: "{{ $.Values.testRail }}"
+      nodeSelector:
+        eks.amazonaws.com/nodegroup: h-stage-main-worker-managed-ng

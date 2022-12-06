@@ -4,7 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test/Smoke_Suite/Login_SmokeTest.js"
+        "clean": "npm rm -rf ./allure-results/* ./dist/",
+        "build": "node_modules/.bin/tsc",
+        "mocha": "./node_modules/.bin/mocha",
+        "allure-test": "npm run clean && npm run build && npm run mocha --config .mocharc.js"
     },
     "keywords": [],
     "author": "",

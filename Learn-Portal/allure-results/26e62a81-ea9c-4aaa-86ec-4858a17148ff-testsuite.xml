@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1669806903364' stop='1669806949256'>
+    <name>Learn Portal - Login Test cases</name>
+    <title>Learn Portal - Login Test cases</title>
+    <test-cases>
+        <test-case start='1669806903365' status='passed' stop='1669806946533'>
+            <name>315930 TC_01 Free User-Login to Learn Portal - With valid phone number and otp</name>
+            <title>315930 TC_01 Free User-Login to Learn Portal - With valid phone number and otp</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-107.0.5304.121'/>
+            </parameters>
+            <steps>
+                <step start='1669806903366' status='passed' stop='1669806908522'>
+                    <name>"before each" hook for Learn Portal - Login Test cases</name>
+                    <title>"before each" hook for Learn Portal - Login Test cases</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669806908524' status='passed' stop='1669806940697'>
+                    <name>Enter valid phone number and otp login to learn portal</name>
+                    <title>Enter valid phone number and otp login to learn portal</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1669806946536' status='passed' stop='1669806949254'>
+                    <name>"after each" hook for Learn Portal - Login Test cases</name>
+                    <title>"after each" hook for Learn Portal - Login Test cases</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

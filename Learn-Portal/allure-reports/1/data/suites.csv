@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Nov 30 11:45:49 UTC 2022","Wed Nov 30 11:46:40 UTC 2022","50531","","Learn Portal - Login Test cases","","Learn Portal - Login Test cases","315930 TC_01 Free User-Login to Learn Portal - With valid phone number and otp","315930 TC_01 Free User-Login to Learn Portal - With valid phone number and otp",""
