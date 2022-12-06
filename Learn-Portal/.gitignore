@@ -1,0 +1,6 @@
+node_modules
+utils/ss.png
+wdio.conf.js
+Config/chromedriver.exe
+package-lock.json
+package.json

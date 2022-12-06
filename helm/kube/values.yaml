@@ -1,0 +1,6 @@
+suite: "Smoke_Suite"
+runEnv: "local"
+slackNotification: "no"
+env: "uat"
+testRail: "yes"
+imageID: "eks-7df0c21-18101711"

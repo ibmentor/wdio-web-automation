@@ -1,0 +1,37 @@
+{
+    "9201033": {
+        "m_comments": "Aakash Live classes",
+        "u_event_id": "9201033",
+        "m_desc": "click on book free trial for aakash banner",
+        "kingdom": "aakash_classes",
+        "phylum": "click",
+        "counter": "click_book_free_trial_aakash",
+        "variety": "free_user",
+        "user_id": "<user_id>",
+        "date": "<date>",
+        "session_id": "<session_id>",
+        "device_id": null,
+        "param7": "{\"device_type\":<mobile/desktop/tab/learn_station>,\"os_type\":<OS>,\"os_version\":<OS_version>,\"browser_name\":<browser_name>,\"version\":<browser_version>}",
+        "value1": 206,
+        "value2": 1,
+        "app_id": "123"
+    },
+    "9200181": {
+        "m_comments": "Aakash Live classes",
+        "u_event_id": "9200181",
+        "m_desc": "select aakash classes from burger menu",
+        "kingdom": "aakash_classes",
+        "phylum": "click",
+        "counter": "select_aakash_classes",
+        "variety": "free_user",
+        "user_id": "<user_id>",
+        "date": "<date>",
+        "session_id": "<session_id>",
+        "param7": "{\"device_type\":<mobile/desktop/tab/learn_station>,\"os_type\":<OS>,\"os_version\":<OS_version>,\"browser_name\":<browser_name>,\"version\":<browser_version>}",
+        "param8": "{\"utm_source\": <utm_source>, \"utm_campaign\": <utm_campaign>, \"utm_content\": <utm_content>, \"utm_medium\": <utm_medium>}",
+        "value1": 209,
+        "value2": 1,
+        "app_id": "123",
+        "device_id": null
+    }
+}

@@ -1,0 +1,39 @@
+{ "9202061": {
+    "m_comments": "Tutor on Demand",
+    "m_category": "Tutor on demand",
+    "u_event_id": "9202061",
+    "m_desc": "click tutor on demand from burger menu",
+    "kingdom": "burger_menu",
+    "phylum": "click",
+    "counter": "click_tutor_on_demand_burger_menu",
+    "variety": "premium_byjus_class_active_user", 
+    "user_id": "<user_id>",
+    "date": "<date>",
+    "session_id": "<session_id>",
+    "param7": "{\"device_type\":<mobile/desktop/tab/learn_station>,\"os_type\":<OS>,\"os_version\":<OS_version>,\"browser_name\":<browser_name>,\"version\":<browser_version>}",
+    "value1": 22,
+    "value2": 1,
+    "app_id": "123",
+    "device_id": null
+    },
+
+"9202062": {
+    "m_category": "Tutor on demand",
+    "device_id": null,
+    "u_event_id": "9202062",
+    "m_desc": "tutor on demand landing page",
+    "kingdom": "tutor_on_demand_page",
+    "phylum": "view",
+    "counter": "landing_page_view",
+    "variety": "premium_byjus_class_active_user", 
+    "user_id": "<user_id>",
+    "date": "<date>",
+    "session_id": "<session_id>",
+    "param7": "{\"device_type\":<mobile/desktop/tab/learn_station>,\"os_type\":<OS>,\"os_version\":<OS_version>,\"browser_name\":<browser_name>,\"version\":<browser_version>}",
+    "value1": 22,
+    "value2": 1,
+    "app_id": "123"
+    }
+
+   
+}
