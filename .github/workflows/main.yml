@@ -60,7 +60,7 @@ jobs:
           if: always()
           with:
             name: logs
-            path: /Learn-Portal/logs
+            path: logs
         - name: Get Allure history
           uses: actions/checkout@v2
           if: always()
