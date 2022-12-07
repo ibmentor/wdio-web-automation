@@ -6,7 +6,7 @@ import { signUpData } from "../../Data/SignUpData"
 describe("Learn Portal - Sign up page test", async () => {
 
     it.only("315997 TC_01 - Sign up page submitting the form blank validations", async () => {
-//         allure.startStep("Open Learn Portal Signup page", true);
+        allure.startStep("Open Learn Portal Signup page", true);
 //         await SignUpPage.loginToLearnPortalSignInPage()
 //         allure.startStep("Click on Next button",true)
 //         await SignUpPage.btnNext.click()
@@ -20,6 +20,7 @@ describe("Learn Portal - Sign up page test", async () => {
 //         expect(await SignUpPage.ddBlankCity.isExisting()).toEqual(true)
 //         allure.startStep("Validate Blank Grade dropdown",true)
 //         expect(await SignUpPage.ddBlankGrade.isExisting()).toEqual(true)
+        
     })
 
     it("316000 TC_04 - Login to Learn Portal with valid phone number - invalid otp", async () => {
