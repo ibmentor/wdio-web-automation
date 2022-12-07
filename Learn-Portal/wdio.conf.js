@@ -399,7 +399,7 @@ if(runEnv == "local"){
          * @param {<Object>} results object containing test results
          */
          onComplete:async function(exitCode, config, capabilities, results) {
-            await deleteFile()
+         
          },
         /**
         * Gets executed when a refresh happens
@@ -830,7 +830,7 @@ else if(runEnv == "jenkins"){
      * @param {<Object>} results object containing test results
      */
     onComplete:async function(exitCode, config, capabilities, results) {
-        await deleteFile()
+        
         if(slackNotification=="yes")
             {
                 await slackReporter.sendTestRunScreenshotToSlack(results)
