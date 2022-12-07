@@ -57,6 +57,7 @@ jobs:
             npm run test
             
         - uses: actions/upload-artifact@v1
+          if: always()
           with:
             name: logs
             path: /Learn-Portal/logs
