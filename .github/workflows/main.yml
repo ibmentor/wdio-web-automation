@@ -21,7 +21,7 @@ jobs:
           
         - uses: actions/setup-node@v3
           with:
-            node-version: 18
+            node-version: 16
         - name: Log env veriables
           env:
            STEP_ENV: Log for the steps only
