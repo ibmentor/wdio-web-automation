@@ -46,12 +46,12 @@ jobs:
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
             echo "GITHUB_SHA: ${GITHUB_SHA}"
             echo "GITHUB_REF: ${GITHUB_REF}"
-        - name: Install
-          run: npm install
+ 
         - name: Test
           run: |
-            
+            cd ${GITHUB_WORKSPACE}/Learn-Portal
             pwd
+            npm install
             npm run test
             
         - uses: actions/upload-artifact@v1
