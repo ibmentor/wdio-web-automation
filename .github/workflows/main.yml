@@ -3,7 +3,6 @@ on: [pull_request,push]
 env:
   WF_ENV: Avilable to all in the project
 jobs:
-
   build:
     runs-on: ubuntu-latest
     env: 
