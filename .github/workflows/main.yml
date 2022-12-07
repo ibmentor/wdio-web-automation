@@ -50,6 +50,7 @@ jobs:
           run: |
             cd ${GITHUB_WORKSPACE}/Learn-Portal
             pwd
+            npm rm -rf node_modules
             npm cache clean --force
             npm install
             npm rebuild
