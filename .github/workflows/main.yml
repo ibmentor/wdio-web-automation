@@ -53,7 +53,6 @@ jobs:
             pwd
             npm install
             npm rebuild
-            npm run watch
             npm run test
             
         - uses: actions/upload-artifact@v1
