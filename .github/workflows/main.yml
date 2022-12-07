@@ -60,7 +60,7 @@ jobs:
           if: failure()
           with:
             name: logs
-            path: logs
+            path: ${GITHUB_WORKSPACE}/Learn-Portal/logs
         - name: Get Allure history
           uses: actions/checkout@v2
           if: always()
