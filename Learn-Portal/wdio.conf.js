@@ -87,7 +87,7 @@ if(runEnv == "local"){
             maxInstances: 1,
             //
              browserName: 'chrome',
-             port: 5555
+ 
             // If outputDir is provided WebdriverIO can capture driver session logs
             // it is possible to configure which logTypes to include/exclude.
             // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -141,13 +141,7 @@ if(runEnv == "local"){
         // your test setup with almost no effort. Unlike plugins, they don't add new
         // commands. Instead, they hook themselves up into the test process.
         services: [
-        ['selenium-standalone', {
-            logPath: './temp',
-            args: {
-                version: "3.141.59",
-                seleniumArgs: ['-host', '127.0.0.1','-port', '5555']
-            },
-        }]
+        ['selenium-standalone'],
     ],
     
         // Framework you want to run your specs with.
