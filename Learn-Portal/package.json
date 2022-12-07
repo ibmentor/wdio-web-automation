@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-           "test": "npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test\Smoke_Suite\SignUp_SmokeTest.js"
+           "test": "npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test/Smoke_Suite/SignUp_SmokeTest.js"
     },
     "keywords": [],
     "author": "",
