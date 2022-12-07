@@ -1,24 +1,59 @@
 name: CI
-on: [push, pull_request]
+on: [pull_request,push]
 env:
-  TOKEN: ${{ secrets.TOKEN }}
+  WF_ENV: Avilable to all in the project
 jobs:
+
   build:
     runs-on: ubuntu-latest
+    env: 
+      JOB_ENV: Avilable for jobs only
     steps:
+        - name: Dumb
+          run: |
+            echo ${{ contains('hello', 'll' ) }}
+            echo ${{ startsWith('pruthvi', 'pr' ) }}
+            echo ${{ endsWith('rajput', 'ut' ) }}
+            echo ${{ format('hello {0} {1} {2}', 'World', '!', '!') }}
         - name: Checkout
-          uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
-        
+          
+          uses: actions/checkout@v3
+          
+        - uses: actions/setup-node@v3
           with:
             node-version: 18
-        - name: Install
+        - name: Log env veriables
+          env:
+           STEP_ENV: Log for the steps only
           run: |
-           cd main
-           pwd
-           npm install
+            echo "WF_ENV: ${WF_ENV}" 
+            echo "JOB_ENV: ${JOB_ENV}"
+            echo "STEP_ENV: ${STEP_ENV}"
+        - name: Log v2
+          run: |
+            echo "WF_ENV: ${WF_ENV}" 
+            echo "JOB_ENV: ${JOB_ENV}"
+            echo "STEP_ENV: ${STEP_ENV}"
+        - name: Default env veriables
+          run: |
+            echo "HOME: ${HOME}"
+            echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
+            echo "GITHUB_ACTION: ${GITHUB_ACTION}"
+            echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
+            echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
+            echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
+            echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
+            echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+            echo "GITHUB_SHA: ${GITHUB_SHA}"
+            echo "GITHUB_REF: ${GITHUB_REF}"
+        - name: Install
+          run: npm install
         - name: Test
-          run: npm run test
+          run: |
+            
+            pwd
+            npm run test
+            
         - uses: actions/upload-artifact@v1
           if: failure()
           with:
@@ -53,7 +88,7 @@ jobs:
           if: always()
           uses: peaceiris/actions-gh-pages@v2
           env:
-           PERSONAL_TOKEN: TOKEN
+           PERSONAL_TOKEN: ${{ secrets.TOKEN }}
            PUBLISH_BRANCH: gh-pages
            
            PUBLISH_DIR: allure-history
