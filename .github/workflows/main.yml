@@ -4,7 +4,7 @@ env:
   WF_ENV: Avilable to all in the project
 jobs:
   build:
-    runs-on: [ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
     env: 
       JOB_ENV: Avilable for jobs only
     steps:
