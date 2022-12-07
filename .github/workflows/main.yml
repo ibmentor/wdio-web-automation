@@ -50,8 +50,8 @@ jobs:
           run: |
             cd ${GITHUB_WORKSPACE}/Learn-Portal
             pwd
+            npm cache clean --force
             npm install
-            npm install @wdio/selenium-standalone-service
             npm rebuild
             npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test/Smoke_Suite/SignUp_SmokeTest.js
             
