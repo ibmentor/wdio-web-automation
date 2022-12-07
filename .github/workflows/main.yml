@@ -52,6 +52,7 @@ jobs:
             cd ${GITHUB_WORKSPACE}/Learn-Portal
             pwd
             npm install
+            npm install @wdio/selenium-standalone-service
             npm rebuild
             npm run test
             
