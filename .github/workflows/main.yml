@@ -57,10 +57,9 @@ jobs:
             npm run test
             
         - uses: actions/upload-artifact@v1
-          if: failure()
           with:
             name: logs
-            path: ${GITHUB_WORKSPACE}/Learn-Portal/logs
+            path: /Learn-Portal/logs
         - name: Get Allure history
           uses: actions/checkout@v2
           if: always()
