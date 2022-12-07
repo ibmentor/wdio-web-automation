@@ -1,9 +1,5 @@
-name: CI Job
-on:
-  workflow_run:
-    workflows: ["Application build"]
-    types:
-      - completed
+name: CI
+on: [push, pull_request]
 env:
   TOKEN: ${{ secrets.TOKEN }}
 jobs:
@@ -18,7 +14,7 @@ jobs:
         - name: Install
           run: npm install
         - name: Test
-          run: npm run test
+          run: npm run 
         - uses: actions/upload-artifact@v1
           if: failure()
           with:
