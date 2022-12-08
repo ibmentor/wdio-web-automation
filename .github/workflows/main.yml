@@ -58,7 +58,15 @@ jobs:
             npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test/Smoke_Suite/SignUp_SmokeTest.js
             
       
-            
+        - uses: actions/upload-artifact@v1
+
+          if: always()
+
+          with:
+
+            name: logs
+
+            path: logs  
   
         - name: Get Allure history
           uses: actions/checkout@v2
@@ -81,15 +89,8 @@ jobs:
                  allure_results: allure-results
                  allure_history: allure-history
                  keep_reports: 10
-        - name: Upload allure report
-          uses: actions/upload-artifact@v3
-          if: always()
-          with:
-               name: allure-report
-               path: allure-report
-               if-no-files-found: error
-               retention-days: 30
-        
+      
+    
           
         - name: Deploy report to Github Pages
           uses: peaceiris/actions-gh-pages@v2
