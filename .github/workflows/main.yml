@@ -60,8 +60,8 @@ jobs:
         - uses: actions/upload-artifact@v2
           if: always()
           with:
-            name: logs
-            path: logs
+            ref: gh-pages
+            path: gh-pages
         - name: Get Allure history
           uses: actions/checkout@v2
           if: always()
