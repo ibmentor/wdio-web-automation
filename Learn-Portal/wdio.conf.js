@@ -87,6 +87,13 @@ if(runEnv == "local"){
             maxInstances: 1,
             //
              browserName: 'chrome',
+             'goog:chromeOptions': {
+                            args: [
+                                '--no-sandbox',
+                                '--start-fullscreen',
+                                '--disable-infobars',
+                                '--disable-notifications',
+                            ]},
  
             // If outputDir is provided WebdriverIO can capture driver session logs
             // it is possible to configure which logTypes to include/exclude.
