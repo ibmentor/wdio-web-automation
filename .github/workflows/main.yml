@@ -57,7 +57,7 @@ jobs:
             npm update
             npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test/Smoke_Suite/SignUp_SmokeTest.js
             
-        - uses: actions/upload-artifact@v1
+        - uses: actions/upload-artifact@v2
           if: always()
           with:
             name: logs
