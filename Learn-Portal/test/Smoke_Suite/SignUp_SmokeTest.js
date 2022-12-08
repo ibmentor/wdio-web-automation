@@ -5,21 +5,21 @@ import { signUpData } from "../../Data/SignUpData"
 
 describe("Learn Portal - Sign up page test", async () => {
 
-    it.only("315997 TC_01 - Sign up page submitting the form blank validations", async () => {
+    it("315997 TC_01 - Sign up page submitting the form blank validations", async () => {
         allure.startStep("Open Learn Portal Signup page", true);
-//         await SignUpPage.loginToLearnPortalSignInPage()
-//         allure.startStep("Click on Next button",true)
-//         await SignUpPage.btnNext.click()
-//         allure.startStep("Wait for Validation message to appear",true)
-//         await SignUpPage.tfBlankNameValidator.isExisting({timeout:1500})
-//         allure.startStep("Validate Blank Name text field",true)
-//         expect(await SignUpPage.tfBlankNameValidator.isExisting()).toEqual(true)
-//         allure.startStep("Validate Blank Email text field",true)
-//         expect(await SignUpPage.tfBlankEmailValidator.isExisting()).toEqual(true)
-//         allure.startStep("Validate Blank City dropdown",true)
-//         expect(await SignUpPage.ddBlankCity.isExisting()).toEqual(true)
-//         allure.startStep("Validate Blank Grade dropdown",true)
-//         expect(await SignUpPage.ddBlankGrade.isExisting()).toEqual(true)
+        await SignUpPage.loginToLearnPortalSignInPage()
+        allure.startStep("Click on Next button",true)
+        await SignUpPage.btnNext.click()
+        allure.startStep("Wait for Validation message to appear",true)
+        await SignUpPage.tfBlankNameValidator.isExisting({timeout:1500})
+        allure.startStep("Validate Blank Name text field",true)
+        expect(await SignUpPage.tfBlankNameValidator.isExisting()).toEqual(true)
+        allure.startStep("Validate Blank Email text field",true)
+        expect(await SignUpPage.tfBlankEmailValidator.isExisting()).toEqual(true)
+        allure.startStep("Validate Blank City dropdown",true)
+        expect(await SignUpPage.ddBlankCity.isExisting()).toEqual(true)
+        allure.startStep("Validate Blank Grade dropdown",true)
+        expect(await SignUpPage.ddBlankGrade.isExisting()).toEqual(true)
         
     })
 
