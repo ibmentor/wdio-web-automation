@@ -57,11 +57,11 @@ jobs:
             npm update
             npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test/Smoke_Suite/SignUp_SmokeTest.js
             
-#         - uses: actions/upload-artifact@v2
-#           if: always()
-#           with:
-#             ref: gh-pages
-#             path: gh-pages
+        - uses: actions/upload-artifact@v2
+          if: always()
+          with:
+            ref: gh-pages
+            path: gh-pages
             
             
         - name: Get Allure history
@@ -80,13 +80,18 @@ jobs:
         - name: Allure Report action from marketplace
           uses: simple-elf/allure-report-action@master
           if: always()
-        #id: allure-report
+          id: allure-report
           with:
-                 allure_results: build/allure-results
-                 gh_pages: gh-pages
-                 allure_report: allure-report
+                 allure_results: allure-results
                  allure_history: allure-history
                  keep_reports: 10
+        - name: Upload allure report
+          uses: actions/upload-artifact@v3
+          with:
+               name: allure-report
+               path: allure-report
+               if-no-files-found: error
+               retention-days: 30
         
           
         - name: Deploy report to Github Pages
