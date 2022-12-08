@@ -32,7 +32,7 @@
         "wdio-chromedriver-service": "^7.2.6",
         "wdio-docker-service": "^3.2.0",
         "webdriverio": "^7.7.5",
-        "@wdio/selenium-standalone-service": "^8.0.8"
+        "wdio-selenium-standalone-service": "~0.0.12"
     },
     "dependencies": {
         "package.json": "^2.0.1"
