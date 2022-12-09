@@ -57,9 +57,12 @@ jobs:
             npm update
             npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test/Smoke_Suite/SignUp_SmokeTest.js
             
+        - uses: actions/upload-artifact@v1
+          if: failure()
+          with:
+            name: logs
+            path: logs
       
-        - uses: actions/checkout@v2
-          if: always()
         - name: Get Allure history
           uses: actions/checkout@v2
           if: always()
@@ -75,7 +78,7 @@ jobs:
           with:
                  allure_results: allure-results
                  allure_history: allure-history
-                 keep_reports: 10
+                 keep_reports: 5
       
     
           
@@ -86,5 +89,4 @@ jobs:
           env:
            PERSONAL_TOKEN: ${{ secrets.TOKEN }}
            PUBLISH_BRANCH: gh-pages
-           
            PUBLISH_DIR: allure-history
