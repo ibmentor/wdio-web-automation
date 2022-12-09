@@ -50,18 +50,14 @@ jobs:
           run: |
             cd ${GITHUB_WORKSPACE}/Learn-Portal
             pwd
-            npm rm -rf node_modules
-            npm cache clean --force
             npm install
-            npm rebuild
-            npm update
             npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test/Smoke_Suite/SignUp_SmokeTest.js
             
         - uses: actions/upload-artifact@v2
           if: failure()
           with:
-            name: logs
-            path: logs
+            name: gh-pages
+            path: gh-pages
       
         - name: Get Allure history
           uses: actions/checkout@v2
