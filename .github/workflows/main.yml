@@ -51,6 +51,7 @@ jobs:
             cd ${GITHUB_WORKSPACE}/Learn-Portal
             pwd
             npm install
+            npm rebuild
             npx cross-env ENV=uat envSpecific=learn testrail=no slackNotification=no emailNotification=no runEnv=local slackNotification=no wdio run ./wdio.conf.js --spec test/Smoke_Suite/SignUp_SmokeTest.js
             
         - uses: actions/upload-artifact@v2
