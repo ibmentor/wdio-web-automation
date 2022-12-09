@@ -73,8 +73,8 @@ jobs:
           if: always()
           #id: allure-report
           with:
-                 allure_results: allure-results
-                 allure_history: allure-history
+                 allure_results: ./allure-results
+                 allure_history: ./allure-history
                  keep_reports: 5
       
     
@@ -86,4 +86,4 @@ jobs:
           env:
            PERSONAL_TOKEN: ${{ secrets.TOKEN }}
            PUBLISH_BRANCH: gh-pages
-           PUBLISH_DIR: allure-history
+           PUBLISH_DIR: ./allure-history
