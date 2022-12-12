@@ -8,12 +8,7 @@ jobs:
     env: 
       JOB_ENV: Avilable for jobs only   
     steps:
-        - name: Dumb
-          run: |
-            echo ${{ contains('hello', 'll' ) }}
-            echo ${{ startsWith('pruthvi', 'pr' ) }}
-            echo ${{ endsWith('rajput', 'ut' ) }}
-            echo ${{ format('hello {0} {1} {2}', 'World', '!', '!') }}
+        
         - name: Checkout
           
           uses: actions/checkout@v3
@@ -21,30 +16,6 @@ jobs:
         - uses: actions/setup-node@v3
           with:
             node-version: 16
-        - name: Log env veriables
-          env:
-           STEP_ENV: Log for the steps only
-          run: |
-            echo "WF_ENV: ${WF_ENV}" 
-            echo "JOB_ENV: ${JOB_ENV}"
-            echo "STEP_ENV: ${STEP_ENV}"
-        - name: Log v2
-          run: |
-            echo "WF_ENV: ${WF_ENV}" 
-            echo "JOB_ENV: ${JOB_ENV}"
-            echo "STEP_ENV: ${STEP_ENV}"
-        - name: Default env veriables
-          run: |
-            echo "HOME: ${HOME}"
-            echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
-            echo "GITHUB_ACTION: ${GITHUB_ACTION}"
-            echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
-            echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
-            echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-            echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
-            echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
-            echo "GITHUB_SHA: ${GITHUB_SHA}"
-            echo "GITHUB_REF: ${GITHUB_REF}"
  
         - name: Test
           run: |
