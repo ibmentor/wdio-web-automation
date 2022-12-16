@@ -1,6 +1,7 @@
 const { updateTestrail, createRun, getRunUrl,getSections,getCaseType,getCases,getRunResult, deleteFile,waitFunction} = require("./utils/function");
 import screenshotPage from './utils/screenshotPage.js'
 import EmailReporter from './utils/Notifiers/EmailReporter.js'
+import JiraReporter from './utils/Notifiers/JiraReporter.js';
 const SlackReporter=require('./utils/Notifiers/slackReporter.js')
 const slackReporter = new SlackReporter();
 const logging = process.env.DEBUG ? 'debug' : 'error';
@@ -11,6 +12,7 @@ const PORT= process.env.PORT
 // const PORTNumber = parseInt(PORT)
 const testrailStatus = process.env.testrail
 const runEnv = process.env.runEnv
+const reporter= process.env.reporter
 const slackNotification = process.env.slackNotification
 const emailNotification = process.env.emailNotification
 const module = process.env.module
@@ -169,7 +171,12 @@ if(runEnv == "local"){
     
     
     
-        reporters: [['allure', {
+        reporters: [[reporter,{
+            outputDir: './Results',
+            outputFileFormat: function() {
+                return `results.json`
+            }
+        }],['allure', {
             outputDir: 'allure-results',
             disableWebdriverStepsReporting: true,
             disableWebdriverScreenshotsReporting: false,
@@ -401,9 +408,10 @@ if(runEnv == "local"){
          * @param {Array.<Object>} capabilities list of capabilities details
          * @param {<Object>} results object containing test results
          */
-//          onComplete:async function(exitCode, config, capabilities, results) {
-         
-//          },
+         onComplete:async function(exitCode, config, capabilities, results) {
+          if(process.env.reporter=='json')  
+          JiraReporter.createJiraTicket();
+         },
         /**
         * Gets executed when a refresh happens
         * @param {String} oldSessionId session ID of the old session
