@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "jira-client": "^8.2.2",
+    "wdio-json-reporter": "^3.0.0"
+  }
+}
